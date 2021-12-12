@@ -19,7 +19,10 @@ public class Server {
         BufferedReader inServer = new BufferedReader(new InputStreamReader(socClient.getInputStream()));
         PrintWriter outServer = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socClient.getOutputStream())), true);
 
-        // todo: implement the scenario
+        String R = inServer.readLine();
+        R= R.replaceAll("[oiyeauOIYEAU]", "");
+        outServer.println(R);
+
 
         // Close in / out
         inServer.close();
